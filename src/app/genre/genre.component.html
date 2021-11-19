@@ -1,0 +1,25 @@
+<div class="genres">
+  <h4 class="text-center">Жанры:</h4>
+  <h2 class="text-center">{{ genre?.name }}</h2>
+</div>
+
+<div class="d-flex flex-wrap" *ngIf="movies?.length; else loading">
+  <div *ngFor="let movie of movies | filter:name"
+       [routerLink]="['/film/', movie.id]"
+       class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4">
+    <div class="card">
+      <img class="card-img-top"
+           src="https://www.themoviedb.org/t/p/w220_and_h330_face/{{movie?.backdrop_path}}"
+           (error)="noImg($event)"
+           alt="...">
+      <div class="card-body">
+        <h4 class="text-center color-danger">{{ movie.vote_average }}</h4>
+        <h5 class="card-title">{{ movie.title }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <i class="fa fa-spinner fa-spin loading"></i>
+</ng-template>

@@ -1,0 +1,31 @@
+@import "./theme/mixin";
+.navbar {
+  padding: 15px;
+  &-brand {
+    @include text(25px, 25px);
+  }
+}
+
+.dropdown-item, .nav-link {
+  cursor: pointer;
+  @include text(20px, 20px);
+}
+
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-menu {
+  left: -90px !important;
+}
+
+.dropdown-item {
+  color: #333333;
+}
+
+.container {
+  max-width: 1440px;
+}
+

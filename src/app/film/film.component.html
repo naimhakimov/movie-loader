@@ -1,0 +1,32 @@
+<div *ngIf="movie else loading" class="row media">
+  <div class="color-white"><h1>{{movie?.title}}</h1></div>
+  <div class="col-sm-5 col-lg-3 col-xl-5">
+    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/{{movie?.backdrop_path}}">
+  </div>
+  <div class="col-sm-3 col-lg-3 col-xl-7 color-white small">
+    <h4>Release year: {{movie?.release_date}}</h4>
+    <h4>Popularity: {{movie?.popularity}}</h4>
+    <h4>Running time: {{movie?.runtime}} min</h4>
+    <h4>Genre: </h4>
+    <div *ngFor="let genre of movie.genres">
+      <span [routerLink]="['/genre/' + genre?.id]">{{genre?.name}}</span>
+    </div>
+    <h4>Country:
+      <div *ngFor="let genre of movie?.production_countries">
+        <span>{{genre?.name}}</span>
+      </div>
+    </h4>
+    <h4>Overview: {{movie?.overview}}</h4>
+  </div>
+  <div class="col-sm-5 col-lg-6 col-xl-5">
+    <iframe [src]="src" width="100%" height="350"></iframe>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>
+
+
+
+

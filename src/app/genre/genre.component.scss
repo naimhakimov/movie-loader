@@ -1,0 +1,36 @@
+.genres {
+  margin: 30px 0;
+  color: white;
+}
+
+.card {
+  transition: 0.4s;
+  background: transparent;
+  color: white;
+
+  &-img-top {
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    z-index: 100;
+  }
+
+  .color-danger {
+    color: brown;
+  }
+}
+
+.loading {
+  font-size: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
